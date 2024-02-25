@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header.js";
 import { Container } from "react-bootstrap";
 import Footer from "./components/Footer.js";
-import HomeScreen from "./screens/HomeScreen.js";
 
 const App = () => {
   return (
