@@ -4,7 +4,7 @@ dotenv.config();
 import connectDB from "./config/db.js";
 import products from "./data/products.js";
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5050;
 
 connectDB(); //connect to MongoDB
 
@@ -21,6 +21,10 @@ app.get("/api/products", (req, res) => {
 app.get("/api/products/:id", (req, res) => {
   const product = products.find((p) => p._id === req.params.id);
   res.json(product);
+});
+
+app.get("/api/*", (req, res) => {
+  res.send("page not found");
 });
 
 app.listen(port, () => {
